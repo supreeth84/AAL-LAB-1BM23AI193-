@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <limits.h>
+
+#define V 4  
+
+int tsp(int graph[V][V], int visited[V], int pos, int count, int cost, int start, int *min_cost) {
+    if (count == V && graph[pos][start]) {
+        if (cost + graph[pos][start] < *min_cost)
+            *min_cost = cost + graph[pos][start];
+        return *min_cost;
+    }
+
+    for (int city = 0; city < V; city++) {
+        if (!visited[city] && graph[pos][city]) {
+            visited[city] = 1;
+            tsp(graph, visited, city, count + 1, cost + graph[pos][city], start, min_cost);
+            visited[city] = 0;
+        }
+    }
+    return *min_cost;
+}
+
+int main() {
+    
+    int graph[V][V] = {
+        { 0, 10, 15, 20 },
+        { 10, 0, 35, 25 },
+        { 15, 35, 0, 30 },
+        { 20, 25, 30, 0 }
+    };
+
+    int visited[V];
+    for (int i = 0; i < V; i++)
+        visited[i] = 0;
+
+    visited[0] = 1;
+    int min_cost = INT_MAX;
+    tsp(graph, visited, 0, 1, 0, 0, &min_cost);
+
+    printf("Minimum cost of visiting all cities: %d\n", min_cost);
+    return 0;
+}
