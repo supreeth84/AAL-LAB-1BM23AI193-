@@ -16,3 +16,10 @@ int main() {
     }
     return 0;
 }
+
+
+OUTPUT--
+Pattern found at index 15
+
+
+=== Code Execution Successful ===
