@@ -3,51 +3,46 @@
 #include <time.h>
 
 int main() {
-    int key, n, count = 0, i;
-    clock_t start_time, end_time;
-    double time_taken;
+    srand(time(NULL));
 
-    printf("Enter the number of elements (up to %d): ", MAX_SIZE);
-    scanf("%d", &n);
-
-    if (n > MAX_SIZE) {
-        printf("Number of elements exceeds the maximum size of %d\n", MAX_SIZE);
-        return 1;
-    }
-
-    int a[MAX_SIZE];
-
-    srand(time(0));
-    for (i = 0; i < n; i++) {
-        a[i] = rand() % 100;
-    }
-
-    printf("Array elements:\n");
-    for (i = 0; i < n; i++) {
-        printf("%d ", a[i]);
+    int numbers[10];
+    int count = 0;
+    printf("Generated 10 random numbers:\n");
+    int i;
+    for (i = 0; i < 10; i++) {
+        numbers[i] = rand() % 100 + 1; 
+        printf("%d ", numbers[i]);
+        
     }
     printf("\n");
 
-    key = rand() % 100;
-    printf("Random key to search for: %d\n", key);
+    int target;
+    printf("Enter the number you want to search for: ");
+    scanf("%d", &target);
 
-    start_time = clock();
-    for (i = 0; i < n; i++) {
-        if (a[i] == key) {
-            count++;
+    int found = 0;
+    for (i = 0; i < 10; i++) {
+    	count = count + 1;
+        if (numbers[i] == target) {
+            printf("Number %d found at index %d.\n", target, i);
+            found = 1;  
+            printf("count = %d\n", count);
+            break;
         }
     }
-    end_time = clock();
-
-    time_taken = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
-
-    if (count > 0) {
-        printf("Element %d is found %d times.\n", key, count);
-    } else {
-        printf("Element not found\n");
+    
+    if (found == 0) {
+        printf("Number %d not found in the array.\n", target);
     }
-
-    printf("Time Taken for search in seconds: %f\n", time_taken);
-
     return 0;
 }
+
+----------------------------------------------------------------------------------------------------------------------------
+
+OUTPUT:-
+
+Generated 10 random numbers:
+89 92 22 67 97 79 53 28 30 79 
+Enter the number you want to search for: 53
+Number 53 found at index 6.
+count = 7
