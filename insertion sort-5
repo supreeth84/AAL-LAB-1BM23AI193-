@@ -39,3 +39,14 @@ int main() {
     
     return 0;
 }
+
+
+
+OUTPUT-
+Original array: 
+12 11 13 5 6 
+Sorted array: 
+5 6 11 12 13 
+
+
+=== Code Execution Successful ===
