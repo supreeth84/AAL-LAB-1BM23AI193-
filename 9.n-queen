@@ -71,3 +71,18 @@ int main() {
 
     return 0;
 }
+
+
+
+OUTPUT-Solution:
+Q . . . . . . . 
+. . . . Q . . . 
+. . . . . . . Q 
+. . . . . Q . . 
+. . Q . . . . . 
+. . . . . . Q . 
+. Q . . . . . . 
+. . . Q . . . . 
+
+
+=== Code Execution Successful ===
