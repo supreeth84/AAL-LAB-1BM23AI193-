@@ -52,3 +52,16 @@ int main() {
 
     return 0;
 }
+
+
+OUTPUT-
+Enter the number of elements in the array: 4
+array before bubble sort:
+47 13 3 99 
+
+array after bubble sort:3 13 47 99 
+Count: 3
+Time taken for bubble sort: 0.000002 seconds
+
+
+=== Code Execution Successful ===
