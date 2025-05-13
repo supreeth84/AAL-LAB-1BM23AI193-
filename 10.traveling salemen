@@ -40,3 +40,9 @@ int main() {
     printf("Minimum cost of visiting all cities: %d\n", min_cost);
     return 0;
 }
+
+
+OUTPUT-Minimum cost of visiting all cities: 80
+
+
+=== Code Execution Successful ===
